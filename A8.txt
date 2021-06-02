@@ -1,0 +1,76 @@
+/****************Assignment 8******************************/
+
+//Q1]update sales person city where city no = 5;
+SQL> update salespeople set sname = 'mishell' where city like 'mumbai';
+SID SNAME                     CITY                      COMMI
+---------- ------------------------- -------------------- ----------
+       501 millo                     pune                       2210
+       502 david                     latur                      4300
+       503 mishell                   mumbai                     5300
+1 row updated.
+
+
+//Q2]delete sales ppl where commi is <2000;
+SQL> insert into salespeople values(504,'deletos','thane',2000);
+1 row created.
+	delete from salespeople where commi<=2000;
+1 row deleted.
+
+
+//Q3]delect salespeople where city like mumbai;
+SQL> delete from salespeople where city like 'mumbai';
+1 row deleted.
+
+
+//Q4]create view that shows sname,sno from sales table
+ create view viewsalesppl as select sid, sname from salespeople;
+View created.
+
+SQL> select * from viewsalesppl;
+
+       SID SNAME
+---------- -------------------------
+       501 millo
+       502 david
+	   
+//Q5]create view that all fields from order table where order date greater than '12-jul-17'
+SQL> create view vieworder as select * from orders where odate<'12-jul-17';
+View created.
+
+SQL> select * from vieworder;
+
+       OID ODATE            SID        AMT
+---------- --------- ---------- ----------
+      1205 15-SEP-12        501       3000
+	  
+//Q6]create view that shows sno name from sales table where commi is <=10000
+SQL> create view viewsalespeople as select sid,sname from salespeople where commi <= 5300;
+View created.
+
+SQL> select  * from viewsalespeople;
+
+       SID SNAME
+---------- -------------------------
+       501 millo
+       502 david
+
+	   
+//Q7]drop view from order1 from orders table 
+SQL> drop view vieworder;
+View dropped.
+
+
+//Q8]create view that shows all fields from salespeople where city= pune.
+SQL> create view viewcustomer  as select * from cust53 where city like 'pune';
+View created.
+
+SQL> select * from viewcustomer;
+
+       CID CNAME                     CITY                     RATING        SID
+---------- ------------------------- -------------------- ---------- ----------
+       101 prabol s                  pune                          5        501
+
+	   
+//Q9]delete view that shows sale sno,sname from sale where sname='millo'
+SQL> delete from viewsalespeople where sname like 'millo';
+1 row deleted.

@@ -1,0 +1,87 @@
+/****************Assignment 2******************************/
+
+//  Q1. Display all record with sales people info.
+SQL> select * from customer;
+
+       CID CNAME                     CITY                     RATING        SID
+---------- ------------------------- -------------------- ---------- ----------
+       101 prabol s                  pune                          5        501
+       102 mukash k                  mumbai                        8        501
+       103 pradeep f                 latur                         9        502
+       104 omkar w                   thane                         6        502
+       105 aska j                    bhopal                        7        503
+
+// Q2. Display sno scommition from sales
+SQL> select sid,commi from salespeople;
+
+       SID      COMMI
+---------- ----------
+       501       2010
+       502       4100
+       503       5100
+
+// Q3. Display oder date, oder number , customer number,amount from oder
+SQL> select odate,oid,amt from orders;
+
+ODATE            OID        AMT
+--------- ---------- ----------
+11-MAR-19       1201      21000
+20-FEB-19       1202       3100
+31-AUG-18       1203      41000
+12-JUL-17       1204       5000
+15-SEP-12       1205       3000
+
+// Q4. Display snumber from order table without dublication
+SQL> select distinct sid from orders;
+
+       SID
+----------
+       502
+       503
+       501
+	   
+// Q5. Display name and city of salesman where city is latur from sales tables
+SQL> select sname,city from salespeople where city like 'latur';
+
+SNAME                     CITY
+------------------------- --------------------
+david                     latur
+
+// Q6. Display all detials of customer where rating is 7
+SQL> select * from customer where rating=7;
+
+       CID CNAME                     CITY                     RATING        SID
+---------- ------------------------- -------------------- ---------- ----------
+       105 aska j                    bhopal                        7        503
+
+//  Q.7 Display from customer table where sno is 101
+SQL> select * from customer where cid=101;
+
+       CID CNAME                     CITY                     RATING        SID
+---------- ------------------------- -------------------- ---------- ----------
+       101 prabol s                  pune                          5        501
+	   
+// Q8.Display the number of sales ppl with orders currently in the order table without any repetitions.
+SQL> select distinct sid from orders;
+
+       SID
+----------
+       502
+       503
+       501
+
+// Q9. Display all customer where rating is more then 7
+SQL> select * from customer where rating>7;
+
+       CID CNAME                     CITY                     RATING        SID
+---------- ------------------------- -------------------- ---------- ----------
+       102 mukash k                  mumbai                        8        501
+       103 pradeep f                 latur                         9        502
+
+// Q10. Display all customer where city is mumbai and rating is more then 6
+SQL> select * from customer where city like 'mumbai' and rating>7;
+
+       CID CNAME                     CITY                     RATING        SID
+---------- ------------------------- -------------------- ---------- ----------
+       102 mukash k                  mumbai                        8        501
+       106 dinesh k                  mumbai                        9        503

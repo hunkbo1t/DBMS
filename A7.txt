@@ -1,0 +1,39 @@
+ /****************Assignment 7******************************/
+ //Q1] write a query that total orders for each day place result in DESC order;
+ SQL> select odate,amt from orders order by amt DESC;
+
+ODATE            AMT
+--------- ----------
+31-AUG-18      41000
+11-MAR-19      21000
+12-JUL-17       5000
+15-SEP-12       3000
+
+ //Q2] Add a col current balance in orders table for current balance;
+		SQL> alter table orders add curr_bal number(5);
+	Table altered.
+ 
+ //Q3] drop a col current balance in order table for current balance;
+		SQL> alter table orders drop column curr_bal;
+	Table altered. 
+ 
+ //Q4] Rename table from order to order2;
+	SQL> alter table orders rename to orders;
+		Table altered.
+ 
+ //Q5] increase commi by 200;
+		SQL> update salespeople set commi=commi+200;
+
+3 rows updated.
+
+SQL> select * from salespeople;
+
+       SID SNAME                     CITY                      COMMI
+---------- ------------------------- -------------------- ----------
+       501 millo                     pune                       2210
+       502 david                     latur                      4300
+       503 satar                     mumbai                     5300
+	   
+ //Q6]	delect all order where odate is > 20-feb-2019
+	SQL> delete  from orders where odate = '20-feb-19';
+	1 row deleted.

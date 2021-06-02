@@ -1,0 +1,66 @@
+/****************Assignment 10******************************/
+
+//Q1]Use upper and lower case function for sname from sale table.
+SQL> select UPPER(cname),LOWER(cname) from customer;
+
+UPPER(CNAME)              LOWER(CNAME)
+------------------------- -------------------------
+PRABOL S                  prabol s
+MUKASH K                  mukash k
+PRADEEP F                 pradeep f
+OMKAR W                   omkar w
+ASKA J                    aska j
+DINESH K                  dinesh k
+DUPANDER P                dupander p
+KAMALASH P                kamalash p
+DEV                       dev
+DEF                       def
+
+10 rows selected.
+
+//Q2] Absolute function for amt from order table.
+SQL> select abs(amt) from dual;
+SQL> select ABS(-12.0) from dual;
+
+ABS(-12.0)
+----------
+        12
+	  
+//Q3] Floor function for amt from order table.
+SQL> select FLOOR(26.35) from dual;
+
+FLOOR(26.35)
+------------
+          26
+		  
+//Q4] Greater value for amt from order table.
+SQL> select GREATEST(15,12.0,-5.5,300) from dual;
+
+GREATEST(15,12.0,-5.5,300)
+--------------------------
+                       300
+
+//Q5] Least function for amt from order table.
+SQL> select LEAST(15,12.0,-5.5,300) from dual;
+
+LEAST(15,12.0,-5.5,300)
+-----------------------
+                   -5.5
+				   
+//Q6] mod function for amt from order table.
+SQL> select MOD(7,2) from dual;
+
+  MOD(7,2)
+----------
+         1
+		 
+//Q7] sqrt function for amt from order table.
+SQL> select sqrt(amt) from orders;
+
+ SQRT(AMT)
+----------
+144.913767
+202.484567
+70.7106781
+54.7722558
+

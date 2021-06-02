@@ -1,0 +1,44 @@
+/****************Assignment 5******************************/
+
+ //Q1] Display cnt of total cust in customer table.
+	SQL> select count(cid) from customer;
+
+COUNT(CID)
+----------
+         6
+		 
+		 
+ //Q2] Display cnt of sid in orders  without dublication.
+	SQL> select count(distinct(sid)) from orders;
+
+COUNT(DISTINCT(SID))
+--------------------
+                   3
+
+ //Q3] Display cnt of all order from record from 2012.
+	SQL> select count(*) from orders where odate like '%12';
+
+  COUNT(*)
+----------
+         1
+
+ //Q4] Display cnt of not null city values in cust table.
+	SQL> select count(cid) from customer where city is NOT NULL;
+
+COUNT(CID)
+----------
+         6
+		 
+ //Q5] Display max outstanding balance amount as balance amount.
+	SQL> select max(amt) from orders;
+
+  MAX(AMT)
+----------
+     41000
+	 
+ //Q6] Display max rating within cust table.
+	SQL> select max(rating) from customer;
+
+MAX(RATING)
+-----------
+         10

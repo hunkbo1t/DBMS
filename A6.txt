@@ -1,0 +1,60 @@
+/****************Assignment 6******************************/
+
+ //Q1] Display avg of amount
+	SQL> select avg(amt) from orders;
+
+  AVG(AMT)
+----------
+     14620
+	 
+ //Q2] Display sales_ppl53 number wise max amount from order table
+	SQL> select salespeople.sid,sname,amt from salespeople,orders where salespeople.sid=orders.sid order by amt DESC;
+
+       SID SNAME                            AMT
+---------- ------------------------- ----------
+       503 satar                          41000
+       501 millo                          21000
+       502 david                           5000
+       502 david                           3100
+       501 millo                           3000
+
+ //Q3] Display large order by each salespeople on each date. distinct
+	SQL> select amt from orders order by amt DESC;
+
+       AMT
+----------
+     41000
+     21000
+      5000
+      3100
+      3000
+
+// Q4] Display order of max above 5000
+	  SQL> select oid, amt from orders where amt>5000 order by amt DESC;
+
+       OID        AMT
+---------- ----------
+      1203      41000
+      1201      21000
+	  
+//Q5]Display detials of order oid, odate wise
+	  SQL> select * from orders order by oid,odate;
+
+       OID ODATE            SID        AMT
+---------- --------- ---------- ----------
+      1201 11-MAR-19        501      21000
+      1203 31-AUG-18        503      41000
+      1204 12-JUL-17        502       5000
+      1205 15-SEP-12        501       3000
+
+//Q6]Display cust highest rating in each city
+ SQL> select max(rating) from customer group by city;
+
+CITY                 MAX(RATING)
+-------------------- -----------
+bhopal                         7
+                              10
+latur                          9
+mumbai                         9
+thane                          6
+pune                           5

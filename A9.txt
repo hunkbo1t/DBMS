@@ -1,0 +1,49 @@
+/****************Assignment 9******************************/
+
+//Q1] Adding primary key constraint to an existing table.
+SQL> alter table customer add primary key(cid);
+
+Table altered.
+
+//Q2] Adding foreign key constraints to an existing table
+SQL> alter table orders53 add foreign key(sid)references salespeople(sid);
+
+Table altered.
+	
+//Q3] Adding a new column in an existing table.
+SQL> alter table customer add sex varchar(1);
+
+Table altered.
+
+//Q4] Use length function for cname from customer.
+SQL> select length(cname) from customer;
+
+LENGTH(CNAME)
+-------------
+            8
+            8
+            9
+            7
+            6
+            8
+           10
+           10
+            3
+            3
+
+10 rows selected.
+
+
+//Q5] Use rpad and lpad function for sname in sale table
+SQL> select lpad(sname,7,'*') from salespeople;
+
+LPAD(SNAME,7,'*')
+----------------------------
+**david
+
+//Q6] Use substring functon for sname from sale table.
+SQL> select substr(sname,1,6) from salespeople;
+
+SUBSTR(SNAME,1,6)
+------------------------
+david

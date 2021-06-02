@@ -1,0 +1,77 @@
+/****************Assignment 3******************************/
+
+//Q1]Display all the customer record arranged on A-Z
+SQL> select * from customer order by cname ASC;
+
+       CID CNAME                     CITY                     RATING        SID
+---------- ------------------------- -------------------- ---------- ----------
+       105 aska j                    bhopal                        7        503
+       110 def                       pune                          7        503
+       109 dev                                                     4        502
+       106 dinesh k                  mumbai                        9        503
+       107 dupander p                                             10        502
+       108 kamalash p                                              5        501
+       102 mukash k                  mumbai                        8        501
+       104 omkar w                   thane                         6        502
+       101 prabol s                  pune                          5        501
+       103 pradeep f                 latur                         9        502
+
+10 rows selected.
+
+//Q2]  Display all customer record arranged in descending order
+SQL> select * from customer order by cname DESC;
+
+       CID CNAME                     CITY                     RATING        SID
+---------- ------------------------- -------------------- ---------- ----------
+       103 pradeep f                 latur                         9        502
+       101 prabol s                  pune                          5        501
+       104 omkar w                   thane                         6        502
+       102 mukash k                  mumbai                        8        501
+       108 kamalash p                                              5        501
+       107 dupander p                                             10        502
+       106 dinesh k                  mumbai                        9        503
+       109 dev                                                     4        502
+       110 def                       pune                          7        503
+       105 aska j                    bhopal                        7        503
+
+10 rows selected.
+
+//Q3] Display all sales person record arranged on snum.
+SQL> select * from salespeople order by sid;
+
+       SID SNAME           COMMI CITY
+---------- ---------- ---------- ----------
+       501 millo            2010 pune
+       502 david            4100 latur
+       503 satar            5100 mumbai
+
+//Q4] Display all count for total number of customer in customer table
+SQL> select count(*) from customer;
+
+  COUNT(*)
+----------
+        10
+
+//Q5] Display the maximum outstanding balance+amount as 1000+amt.
+
+SQL> select oid,odate, 1000+amt from orders;
+
+       OID ODATE       1000+AMT
+---------- --------- ----------
+      1201 11-MAR-19      22000
+      1203 31-AUG-18      42000
+      1204 12-JUL-17       6000
+      1205 15-SEP-12       4000
+//Q6] Display the count of different not null city values in the customers
+SQL> select count(*) from customer where city IS NOT NULL;
+
+  COUNT(*)
+----------
+         7
+
+//Q7] Display sale person number wise maximum amount from order table.		 
+SQL> select max(amt)  from orders order by sid;
+
+  MAX(AMT)
+----------
+     41000

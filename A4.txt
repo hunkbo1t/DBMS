@@ -1,0 +1,57 @@
+/****************Assignment 4******************************/
+
+ //Q1] Find all the record from customer table where city is null.
+ SQL>select * from customer where city is null;
+
+  CID CNAME                     CITY                     RATING        SID
+----- ------------------------- -------------------- ---------- ----------
+    6 xyz                                                     7        501
+    7 dwe                                                     5        502
+
+ //Q2] Each sales person has 12% commi on order amount. Display sid oid sname of such record.
+ SQL>select orders.sid,sname,commi from salespeople,orders where salespeople.sid=orders.sid;
+
+  SID SNAME                          COMMI
+----- ------------------------- ----------
+  501 pretro                          2100
+  502 secro                           3100
+  501 pretro                          2100
+  503 millo                           4100
+  502 secro                           3100
+
+//Q3] Display customer record order by ASC.  
+select cid,cname,city from customer order by cname ASC;
+
+  CID CNAME                     CITY
+----- ------------------------- --------------------
+    1 abc                       pune
+    2 def                       pune
+    7 dwe
+    3 ghi                       thane
+    4 ijk                       mumbai
+    5 pqr                       mumbai
+    6 xyz
+
+// Q4] Display customer record order by DESC.  
+
+select cid, cname, city, rating from customer order by rating DESC;
+
+  CID CNAME                     CITY                     RATING
+----- ------------------------- -------------------- ----------
+    2 def                       pune                         10
+    5 pqr                       mumbai                       10
+    1 abc                       pune                          9
+    4 ijk                       mumbai                        9
+    3 ghi                       thane                         5
+    5 pqr                       mumbai
+ 
+//Q5] Display record arranged in sid.
+select * from salespeople order by sid;
+
+  SID SNAME                     CITY                      COMMI
+----- ------------------------- -------------------- ----------
+  501 pretro                    pune                       2100
+  502 secro                     thane                      3100
+  503 millo                     mumbai                     4100
+  504 stara                     latur                      3000
+  505 david                     pune                       2000

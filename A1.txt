@@ -1,0 +1,76 @@
+/****************Assignment 1******************************/
+
+
+SQL> create table salespeople(sid number(5)primary key,
+  2  sname varchar2(25)not null,
+  3  city varchar2(20), commi number(5));
+
+Table created.
+
+SQL> create table orders(oid number(5)primary key, odate date,
+  2  sid number(5), amt number(5));
+
+Table created.
+
+SQL> create table customer(cid number(5)primary key,cname varchar2(25),
+  2  city varchar2(20), rating number(5),sid number(5));
+
+Table created.
+
+SQL> insert into customer values('&cid','&cname','&city','&rating','&sid');
+SQL> insert into orders values('&oid','&odate','&sid','&amt');
+SQL> insert into salespeople values('&sid','&sname','&city','&commi');
+
+
+SQL> desc customer;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CID                                       NOT NULL NUMBER(5)
+ CNAME                                              VARCHAR2(25)
+ CITY                                               VARCHAR2(20)
+ RATING                                             NUMBER(5)
+ SID                                                NUMBER(5)
+
+SQL> desc orders;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OID                                       NOT NULL NUMBER(5)
+ ODATE                                              DATE
+ SID                                                NUMBER(5)
+ AMT                                                NUMBER(5)
+
+SQL> desc salespeople;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                       NOT NULL NUMBER(5)
+ SNAME                                     NOT NULL VARCHAR2(25)
+ CITY                                               VARCHAR2(20)
+ COMMI                                              NUMBER(5)
+
+SQL> select * from customer;
+
+       CID CNAME                     CITY                     RATING        SID
+---------- ------------------------- -------------------- ---------- ----------
+       101 prabol s                  pune                          5        501
+       102 mukash k                  mumbai                        8        501
+       103 pradeep f                 latur                         9        502
+       104 omkar w                   thane                         6        502
+       105 aska j                    bhopal                        7        503
+
+SQL> select * from orders;
+
+       OID ODATE            SID        AMT
+---------- --------- ---------- ----------
+      1201 11-MAR-19        501      21000
+      1202 20-FEB-19        502       3100
+      1203 31-AUG-18        503      41000
+      1204 12-JUL-17        502       5000
+      1205 15-SEP-12        501       3000
+
+SQL> select * from salespeople;
+
+       SID SNAME                     CITY                      COMMI
+---------- ------------------------- -------------------- ----------
+       501 millo                     pune                       2010
+       502 david                     latur                      4100
+       503 satar                     mumbai                     5100
